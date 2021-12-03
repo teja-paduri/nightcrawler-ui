@@ -1,0 +1,16 @@
+.About {
+  /* text-align: center; */
+}
+
+.title {
+  font-size: xx-large;
+  font-weight: bold;
+  margin: 10px;
+  color: whitesmoke;
+}
+
+.NightCrawler {
+  height: 550px;
+  width: 1000px;
+  margin: 10px;
+}
