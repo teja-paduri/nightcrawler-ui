@@ -14,6 +14,10 @@ ReactDOM.render(
         <Route path="/" element={<App />} />
         <Route path="about" element={<About />} />
         <Route path="query" element={<Query />} />
+        <Route path="query/query1" element={<Query />} />
+        <Route path="query/query2" element={<Query />} />
+        <Route path="query/query3" element={<Query />} />
+        <Route path="query/query4" element={<Query />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
