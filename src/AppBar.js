@@ -28,7 +28,7 @@ const AppBarr = styled(MuiAppBar, {
   }),
 }));
 
-export default function AppBar({ open, setOpen, toggleDrawer }) {
+export default function AppBar({ open, toggleDrawer }) {
   return (
     <AppBarr position="absolute" open={open}>
       <Toolbar

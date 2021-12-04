@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import About from "./About";
 import Query from "./Query";
+import Query1 from "./Queries/Query1";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
@@ -14,7 +15,7 @@ ReactDOM.render(
         <Route path="/" element={<App />} />
         <Route path="about" element={<About />} />
         <Route path="query" element={<Query />} />
-        <Route path="query/query1" element={<Query />} />
+        <Route path="query/query1" element={<Query1 />} />
         <Route path="query/query2" element={<Query />} />
         <Route path="query/query3" element={<Query />} />
         <Route path="query/query4" element={<Query />} />

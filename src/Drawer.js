@@ -77,7 +77,7 @@ const listItems = (
     </ListItem>
   </div>
 );
-export default function Drawer({ open, setOpen, toggleDrawer }) {
+export default function Drawer({ open, toggleDrawer }) {
   //   const [open, setOpen] = React.useState(true);
   //   const toggleDrawer = () => {
   //     setOpen(!open);
