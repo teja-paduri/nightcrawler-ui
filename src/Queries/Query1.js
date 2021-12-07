@@ -13,7 +13,11 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import Button from "@mui/material/Button";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 import Chart from "./Charts";
+import APIClient from "../Api/apiClient";
 
 const mdTheme = createTheme();
 export default class Query1 extends React.Component {
@@ -22,8 +26,15 @@ export default class Query1 extends React.Component {
     this.state = {
       open: true,
       age: "",
+      backDrop: false,
     };
   }
+
+  toggle = (item) => {
+    let obj = {};
+    obj[item] = !this.state[item];
+    this.setState(obj);
+  };
 
   toggleDrawer = () => {
     this.setState((state) => ({
@@ -36,8 +47,18 @@ export default class Query1 extends React.Component {
     this.setState({ age: event.target.value });
   };
 
+  handleSubmit = () => {
+    // this.toggle("backDrop");
+    let { age } = this.state;
+    let request = {
+      age: age,
+    };
+    this.apiClient = new APIClient();
+    this.apiClient.getKudos(request);
+  };
+
   render() {
-    let { open, age } = this.state;
+    let { open, age, backDrop } = this.state;
     return (
       <div className="About">
         <ThemeProvider theme={mdTheme}>
@@ -127,8 +148,28 @@ export default class Query1 extends React.Component {
                       <MenuItem value={30}>Thirty</MenuItem>
                     </Select>
                   </FormControl>
+                  <Button
+                    onClick={() => this.handleSubmit()}
+                    sx={{
+                      m: 4,
+                      minWidth: 120,
+                    }}
+                    variant="contained"
+                  >
+                    Submit
+                  </Button>
                 </Box>
               </div>
+              <Backdrop
+                sx={{
+                  color: "#fff",
+                  zIndex: (theme) => theme.zIndex.drawer + 1,
+                }}
+                open={backDrop}
+                // onClick={handleClose}
+              >
+                <CircularProgress color="inherit" />
+              </Backdrop>
               <Grid item xs={12} style={{ margin: "40px" }}>
                 <Paper
                   sx={{

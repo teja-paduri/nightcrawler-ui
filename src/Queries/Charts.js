@@ -29,7 +29,6 @@ const data = [
 
 export default function Chart() {
   const theme = useTheme();
-  console.log(data);
   return (
     <React.Fragment>
       <Typography
